@@ -9,6 +9,13 @@ ctk.set_default_color_theme("blue")
 class BStore(ctk.CTk):
     def __init__(self, database):
         super().__init__()
+        
+        self.coolbg = ctk.CTkLabel(self, bg_color="#2C3531",width=1350, height=750)
+        self.coolbg.place(x=0, y=0)
+
+        self.coolbg = ctk.CTkLabel(self, bg_color="#242424",width=350, height=1050)
+        self.coolbg.place(x=0, y=0)
+        
         self.db = database
 
         self.title('DvD Store') 
@@ -21,8 +28,8 @@ class BStore(ctk.CTk):
         self.style.configure('Treeview', 
                         font=self.font, 
                         foreground='black',
-                        background='#FFCB9A',
-                        fieldlbackground='#FFCB9A')
+                        background='#D1E8E2',
+                        fieldlbackground='#D1E8E2')
 
         self.style.map('Treeview', background=[('selected', '#116466')])
 
@@ -44,7 +51,7 @@ class BStore(ctk.CTk):
         self.tree.heading("Price", text="Price", anchor=tk.CENTER)
         self.tree.heading("Available", text="Available", anchor=tk.CENTER)
 
-        self.tree.place(x=370, y=40, width=950, height=650)
+        self.tree.place(x=375, y=40, width=950, height=650)
 
         # title label
         self.title_en = ctk.CTkLabel(self, 
@@ -168,7 +175,7 @@ class BStore(ctk.CTk):
                                     hover_color=self.button_hover_color,
                                     text="Delete Entry", 
                                     command=self.del_entry)
-        self.delete.place(x=60, y=500)
+        self.delete.place(x=60, y=502)
 
         self.imp = ctk.CTkButton(self, 
                                  corner_radius=20, 
